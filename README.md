@@ -27,7 +27,7 @@ product_page.get_product_info()
  'Ranking Category': ' #74,014 in Clothing, Shoes & Jewelry (',
  'Total Reviews': 13}
  ```
-
+![image](https://github.com/nishilchen/Amazon-Pages/blob/master/AmazonProductPage.png?raw=true)
 
 ## Amazon Product Review Pages
 ```
@@ -48,6 +48,7 @@ product_review.get_reviews()[0]
   'Size': '31',
   'Text': 'To low waisted'}
 ```
+![image](https://github.com/nishilchen/Amazon-Pages/blob/master/AmazonProductReviewPage.png?raw=true)
 
 ## Amazon Search Pages
 ```
@@ -111,3 +112,4 @@ product_list[0:5]
   'Type': 'Organic',
   'position': 4}]
 ```
+![image](https://github.com/nishilchen/Amazon-Pages/blob/master/AmazonSearchPage.png?raw=true)
