@@ -10,6 +10,8 @@ import requests
 #%%
 class AmazonProductPage:
     def __init__(self, asin, country, user_agent):
+        self.asin = asin
+        self.country = country
         self.amazon_url  = self.get_url(country) + '/dp/' + asin
         self.headers = {'User-Agent': user_agent}
         self.parser = self.get_RankAndRating_page()
@@ -85,7 +87,7 @@ class AmazonProductPage:
         XPATH_AVE_RATING = '//span[@id="acrPopover"]//span//a//i//span//text()'
         raw_ave_rating = self.parser.xpath(XPATH_AVE_RATING)
         if raw_ave_rating:
-            if country == 'jp':
+            if self.country == 'jp':
                 integer = raw_ave_rating[0].split('.')[0][-1]
                 decimal = raw_ave_rating[0].split('.')[1][-1]
                 ave_rating = float(".".join([integer, decimal]))
@@ -140,15 +142,7 @@ class AmazonProductPage:
         return step2
 
 
-#%%
-asin = "B07KYSCDWV"
-country = "us"
-user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134"
 
-
-product = AmazonProductPage(asin,country,user_agent)
-product.robot_check()
-product.get_product_info()
 
 
 

@@ -126,16 +126,6 @@ class AmazonSearchPage():
                 "Sponsored Brand": brand_name,
                 "Time": time,
                 "Period": self.time_period(time)}
-#%%
-keyword = "halloween customs for women"
-user_agent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
-
-search_page = AmazonSearchPage(keyword, user_agent)
-search_page.robot_check()
-product_list = search_page.get_product_info_list()
-product_list[0]
-
-
 
 
 
